@@ -5,17 +5,18 @@
       <title>Currency Exchange</title>
     </head>
 <body>
-  <h1>Currency Exchange</h1>
-  <h4>Exchange any dollar amount is US Dollars to one of 5 other currencies!</h4>
-  <form id="selector">
-    <label for="usdInput">Enter the US Dollar amount:</label>
-    <input id="usdInput" type="text" placeholder="USD"/>
-    <label for="currency">Select the currency that you would like your dollar converted to:</label>
-    <select id="currency">
-      <option value="select" selected disabled hidden>Select</option>
-      <option value="EUR">Euro</option>
-      <option value="CAD">Canadian Dollar</option>
-      <option value="GBP">Pound Sterling</option>
+  <div class="container">
+    <h1>Currency Exchange</h1>
+    <h4>Exchange any dollar amount is US Dollars to one of 5 other currencies!</h4>
+    <form id="selector">
+      <label for="usdInput">Enter the US Dollar amount:</label>
+      <input id="usdInput" type="text" placeholder="USD"/>
+      <label for="currency">Select the currency that you would like your dollar converted to:</label>
+      <select id="currency">
+        <option value="select" selected disabled hidden>Select</option>
+        <option value="EUR">Euro</option>
+        <option value="CAD">Canadian Dollar</option>
+        <option value="GBP">Pound Sterling</option>
       <option value="AUD">Australian Dollar</option>
       <option value="JPY">Japanese Yen</option>
       <option value="other">other</option>
@@ -24,5 +25,6 @@
   </form>
   <div class="exchange"></div>
   <div class="show-errors"></div>
+</div>
 </body>
 </html>

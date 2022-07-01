@@ -1,3 +1,27 @@
 body {
-  background-color:aquamarine;
+  background-color:rgb(151, 238, 209);
+}
+
+h1 {
+  color: green;
+}
+
+h4 {
+  color: rgb(151, 238, 209);
+}
+
+button {
+  padding: 6px;
+  margin:5px;
+  color: white;
+  background-color: white;
+  border-radius: 0.7rem;
+  border: 0.rem rgb(80, 167, 238);
+  border-style: inset ridge ridge inset;
+  font-family: impact;
+  width: 25%;
+}
+
+.container {
+  background-color: white;
 }
