@@ -17,7 +17,7 @@
 * VS Code
 
 ## Description
-#### This website provides a form that takes in user input of an amount in USD as well as the selection of a currency type to exchange the amount to. When the user clicks submit, the results display the value of the USD amount after having been exchanged to the selected currency type. This is done using a currency exchange API.
+#### This website provides a form that takes in user input of an amount in USD as well as the selection of a currency type to exchange the amount to. When the user clicks submit, the results display the value of the USD amount after having been exchanged to the selected currency type. This is done using a currency exchange API. If the API call doesn't go through, an error will be thrown to the console and displayed in the DOM. If there is a selected currency that isn't one of the 5 available as options, an error message will display in the DOM. 
 
 ## Setup/Installation Requirements
 
@@ -30,7 +30,7 @@
 * Generate your own API key from https://www.exchangerate-api.com/
 * In "./.env" file, type "API_KEY=" then paste in your API key after the "=" 
 * Run $ npm run build.
-* Run $ npm run start to view in browser.
+* Run $ npm run start to view in the browser.
 
 ## Known Bugs
 
