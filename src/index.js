@@ -9,9 +9,9 @@ import Exchange from './exchange-service.js';
 //   $('.show-errors').text("");
 // }
 
-// function displayErrors(error) {
-//   $('.show-errors').text(`${error}`);
-// }
+function displayErrors(error) {
+  $('.show-errors').text(`${error}`);
+}
 
 function getElements(response, usdInput, currency) {
   let exchange = 0;
@@ -43,17 +43,17 @@ $(document).ready(function () {
     const currency = $('select#currency').val();
     const usd = "USD";
     Exchange.getExchange(usd)
+      // .then(function(response) {
+      //   getElements(response, usdInput, currency);
+      // });
       .then(function(response) {
+        if (response instanceof Error) {
+          throw Error(`Currency exchange error: ${response.message}`);
+        }
         getElements(response, usdInput, currency);
+      })
+      .catch(function(error) {
+        displayErrors(error.message);
       });
-    // .then(function(response) {
-    //   if (response instanceof Error) {
-    //     throw Error(`Currency exchange error: ${response.message}`);
-    //   }
-    //   displayExchange(rates, usdInput, currency);
-    // })
-    // .catch(function(error) {
-    //   displayErrors(error.message);
-    // });
   });
 });
