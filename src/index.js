@@ -4,10 +4,11 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
 import Exchange from './exchange-service.js';
 
-// function clearFields() {
-//   $('#usdInput').val("");
-//   $('.show-errors').text("");
-// }
+function clearFields() {
+  $('#usdInput').val("");
+  $('.show-errors').text("");
+  $('.exchange').text("");
+}
 
 function displayErrors(error) {
   $('.show-errors').text(`${error}`);
@@ -42,6 +43,7 @@ $(document).ready(function () {
     const usdInput = $('#usdInput').val();
     const currency = $('select#currency').val();
     const usd = "USD";
+    clearFields();
     Exchange.getExchange(usd)
       // .then(function(response) {
       //   getElements(response, usdInput, currency);
