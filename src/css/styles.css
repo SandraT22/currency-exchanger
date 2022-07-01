@@ -13,16 +13,16 @@ h4 {
   color: rgb(151, 238, 209);
 }
 
-button {
-  padding: 6px !important;
-  margin:5px !important;
-  color: rgb(80, 167, 238) !important;
-  background-color: white !important;
-  border-radius: 0.7rem !important;
-  border: 0.rem rgb(80, 167, 238) !important;
-  border-style: inset ridge ridge inset !important;
+.btn {
+  padding: 6px;
+  margin:5px;
+  color: rgb(80, 167, 238);
+  background-color: white;
+  border-radius: 0.7rem;
+  border:.2rem rgb(80, 167, 238);
+  border-style: inset ridge ridge inset;
   font-family: impact;
-  width: 25% !important;
+  width: 25%;
 }
 
 .container {
