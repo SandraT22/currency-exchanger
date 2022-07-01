@@ -1,6 +1,6 @@
 export default class Exchange {
   static getExchange(currencyInput) {
-    return fetch(`https://v6.exchangerate-api.com/v6/${process.env.API_KEY}/latest/${currencyInput}`)
+    return fetch(`https://v6.exchangerate-api.com/v6/${process.env.API_KEY}/latest/${currencyInput}s`)
       .then(function(response) {
         if (!response.ok) {
           throw Error(response.statusText);
