@@ -2,41 +2,52 @@ import $ from 'jquery';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
-import Exchange from '../exchange-service,js';
+import Exchange from '../exchange-service.js';
 
-function clearFields() {
-  $('#usdInput').val("");
-  $('.show-errors').text("");
-}
+// function clearFields() {
+//   $('#usdInput').val("");
+//   $('.show-errors').text("");
+// }
 
 function displayErrors(error) {
   $('.show-errors').text(`${error}`);
 }
 
-function displayExchange(currency) {
-  let Rates = response.conversion_rates;
+function displayEuro(rates, usdInput, currency) {
   let exchange = 0;
-  console.log(responseArray);
   if (currency === "Euro") {
-    exchange = responseArray.EUR * usdInput
-    $('.exchange').text(`The amout in ${currency} is ${exchange}`);
-  }
+  exchange = rates.EUR * usdInput;
+  $('.exchange').text(`The amout in ${currency} is ${exchange}`);
+} else if (currency === "Canadian Dollar") {
+  exchange = rates.CAD * usdInput;
+  $('.exchange').text(`The amout in ${currency} is ${exchange}`);
+} else if (currency === "Pound Sterling") {
+  exchange = rates.GBP * usdInput;
+  $('.exchange').text(`The amout in ${currency} is ${exchange}`);
+} else if (currency === "Australian Dollar") {
+  exchange = rates.AUD * usdInput;
+  $('.exchange').text(`The amout in ${currency} is ${exchange}`);
+} else if (currency === "Japanese Yen") {
+  exchange = rates.JPY * usdInput;
+  $('.exchange').text(`The amout in ${currency} is ${exchange}`);
+}
 }
 
 $(document).ready(function () {
-  $('selector').submit(function (event)) {
+  $('#selector').submit(function (event) {
     event.preventDefault(); 
     const usdInput = $('#usdInput').val();
     const currency = $('select#currency').val();
     Exchange.getExchange(usdInput)
-      .then(function(exchangeResponse) {
-        if (exchangeResponse instanceof Error) {
-          throw Error(`Currency exchange error: ${exchangeResponse.message}`);
+      .then(function(response) {
+        if (response instanceof Error) {
+          throw Error(`Currency exchange error: ${response.message}`);
         }
-        displayExchange(currency);
+          let rates = response.conversion_rates;
+          displayExchange(rates, usdInput, currency)
       })
       .catch(function(error) {
         displayErrors(error.message);
       });
-  }
+  });
 });
