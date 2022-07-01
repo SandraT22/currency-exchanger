@@ -3,39 +3,8 @@ import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
 import Exchange from './exchange-service.js';
+import { clearFields, displayErrors, getElements } from './ui-service.js';
 
-function clearFields() {
-  $('#usdInput').val("");
-  $('.show-errors').text("");
-  $('.exchange').text("");
-}
-
-function displayErrors(error) {
-  $('.show-errors').text(`${error}`);
-}
-
-function getElements(response, usdInput, currency) {
-  let exchange = 0;
-  let rates = response.conversion_rates;
-  if (currency === "EUR") {
-    exchange = rates.EUR * usdInput;
-    $('.exchange').text(`The amout in ${currency} is $${exchange}`);
-  } else if (currency === "CAD") {
-    exchange = rates.CAD * usdInput;
-    $('.exchange').text(`The amout in ${currency} is $${exchange}`);
-  } else if (currency === "GBP") {
-    exchange = rates.GBP * usdInput;
-    $('.exchange').text(`The amout in ${currency} is $${exchange}`);
-  } else if (currency === "AUD") {
-    exchange = rates.AUD * usdInput;
-    $('.exchange').text(`The amout in ${currency} is $${exchange}`);
-  } else if (currency === "JPY") {
-    exchange = rates.JPY * usdInput;
-    $('.exchange').text(`The amout in ${currency} is $${exchange}`);
-  } else {
-    return $('.show-errors').text("Currency selected is not included");
-  }
-}
 
 $(document).ready(function () {
   $('#selector').submit(function (event) {
