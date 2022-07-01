@@ -10,7 +10,7 @@ h1 {
 }
 
 h4 {
-  color: rgb(151, 238, 209);
+  color: rgb(115, 189, 164);
 }
 
 .btn {
@@ -20,7 +20,7 @@ h4 {
   background-color: white;
   border-radius: 0.7rem;
   border:.2rem rgb(80, 167, 238);
-  border-style: inset ridge ridge inset;
+  border-style: inset ridge;
   font-family: impact;
   width: 25%;
 }
