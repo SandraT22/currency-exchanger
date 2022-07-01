@@ -13,24 +13,24 @@ function displayErrors(error) {
   $('.show-errors').text(`${error}`);
 }
 
-function displayEuro(rates, usdInput, currency) {
+function displayExchange(rates, usdInput, currency) {
   let exchange = 0;
   if (currency === "Euro") {
-  exchange = rates.EUR * usdInput;
-  $('.exchange').text(`The amout in ${currency} is ${exchange}`);
-} else if (currency === "Canadian Dollar") {
-  exchange = rates.CAD * usdInput;
-  $('.exchange').text(`The amout in ${currency} is ${exchange}`);
-} else if (currency === "Pound Sterling") {
-  exchange = rates.GBP * usdInput;
-  $('.exchange').text(`The amout in ${currency} is ${exchange}`);
-} else if (currency === "Australian Dollar") {
-  exchange = rates.AUD * usdInput;
-  $('.exchange').text(`The amout in ${currency} is ${exchange}`);
-} else if (currency === "Japanese Yen") {
-  exchange = rates.JPY * usdInput;
-  $('.exchange').text(`The amout in ${currency} is ${exchange}`);
-}
+    exchange = rates.EUR * usdInput;
+    $('.exchange').text(`The amout in ${currency} is ${exchange}`);
+  } else if (currency === "Canadian Dollar") {
+    exchange = rates.CAD * usdInput;
+    $('.exchange').text(`The amout in ${currency} is ${exchange}`);
+  } else if (currency === "Pound Sterling") {
+    exchange = rates.GBP * usdInput;
+    $('.exchange').text(`The amout in ${currency} is ${exchange}`);
+  } else if (currency === "Australian Dollar") {
+    exchange = rates.AUD * usdInput;
+    $('.exchange').text(`The amout in ${currency} is ${exchange}`);
+  } else if (currency === "Japanese Yen") {
+    exchange = rates.JPY * usdInput;
+    $('.exchange').text(`The amout in ${currency} is ${exchange}`);
+  }
 }
 
 $(document).ready(function () {
@@ -44,7 +44,7 @@ $(document).ready(function () {
           throw Error(`Currency exchange error: ${response.message}`);
         }
           let rates = response.conversion_rates;
-          displayExchange(rates, usdInput, currency)
+          displayExchange(rates, usdInput, currency);
       })
       .catch(function(error) {
         displayErrors(error.message);
