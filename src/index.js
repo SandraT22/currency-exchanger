@@ -32,7 +32,7 @@ function getElements(response, usdInput, currency) {
     exchange = rates.JPY * usdInput;
     $('.exchange').text(`The amout in ${currency} is $${exchange}`);
   } else {
-    return $('.show-errors').test("Currency selected is not included");
+    return $('.show-errors').text("Currency selected is not included");
   }
 }
 
