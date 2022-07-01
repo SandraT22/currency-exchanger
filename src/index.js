@@ -14,9 +14,6 @@ $(document).ready(function () {
     const usd = "USD";
     clearFields();
     Exchange.getExchange(usd)
-      // .then(function(response) {
-      //   getElements(response, usdInput, currency);
-      // });
       .then(function(response) {
         if (response instanceof Error) {
           throw Error(`Currency exchange error: ${response.message}`);
