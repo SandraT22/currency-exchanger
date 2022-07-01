@@ -1,9 +1,12 @@
 body {
   background-color:rgb(151, 238, 209);
+  background-image:url(https://image.shutterstock.com/image-photo/backgrounds-colorful-many-roll-currency-600w-258312164.jpg);
 }
 
 h1 {
   color: green;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 5rem;
 }
 
 h4 {
@@ -24,4 +27,14 @@ button {
 
 .container {
   background-color: white;
+}
+
+.exchange {
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  font-size: x-large;
+}
+
+.show-errors {
+  color: red;
+  font-size: large;
 }
